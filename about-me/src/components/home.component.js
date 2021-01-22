@@ -28,7 +28,7 @@ export const Home = () => {
 }
 
 export const Activity = () => {
-    return <h1>This is Activity</h1>
+    return <h1>This is Activity to be done</h1>
 }
 
 export const Contact = () => {
