@@ -1,0 +1,16 @@
+[
+    {
+        "personaldetails": {
+            "firstName": "Ajay",
+            "surName": "Asok",
+            "mainDesignation": "Full-stack developer",
+            "currentPosition": "Student",
+            "location": "United Kingdom"
+        }
+    },
+    {
+        "description": {
+            "descr": "A good team player having an optimistic view also committed towards my duties and flexible enough to adapt to newly assigned roles with greater responsibilities."
+        }
+    }
+]
