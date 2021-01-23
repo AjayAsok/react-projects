@@ -1,8 +1,10 @@
 import { useEffect, useState } from "react"
-import { Card } from "./Card";
+import Card from "./Card";
+import { data } from "../data/data";
 
 export const Home = () => {
-    const [data, setData] = useState(null);
+    const [data, setData] = useState({} as data);
+    const headerList = ["Personal Details", "Who Am I?"]
     const getData = () => {
         fetch(`sampleData.json`)
             .then((response) => {
@@ -37,13 +39,15 @@ export const Home = () => {
                         }
                     </div>
                 </div> */}
-                <Card header="Personal Details" data={data} />
-                <div className="col-5 card m-5 p-2" >
-                    <div className="card-header">Who am I?</div>
-                    <div className="card-body">
-                        <h6><em>{data ? data.description : "No-data"}</em></h6>
-                    </div>
-                </div>
+                {/* {headerList.map((header) => {
+                    console.log(header)
+                    return <Card key={header} header={header} data={data} />
+                })} */}
+                <Card key="Personal Details" header="Personal Details" data={data} />
+                <Card key="Who am I?" header="Who am I?" data={data} />
+            </div>
+            <div className='row pl-2'>
+            <Card key="skills" header="skills" data={data} />
             </div>
         </>
     )
