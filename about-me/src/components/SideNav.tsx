@@ -13,14 +13,15 @@ export const SideNav = () => {
                             </Link>
                     </li>
                     <li className="nav-item">
-                        <Link to="activity">Activity</Link>
+                        <Link to="employment">Employment</Link>
                     </li>
                     <li className="nav-item">
+                        <Link to="skills">Skills</Link>
                     </li>
                 </ul>
                 <ul className="nav flex-column">
                     <li className="nav-item">
-                        <Link to="contact">Contact</Link>
+                        <Link to="education">Education and Certifications</Link>
                     </li>
                     <li className="nav-item">
                         <Link to="contact/phone">Phone</Link>

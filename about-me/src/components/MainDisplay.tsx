@@ -8,9 +8,9 @@ import { SideNav } from "./SideNav";
 export const AboutMe = () => {
     return (
         <div>
-            <nav className="navbar navbar-light bg-light">
+            {/* <nav className="navbar navbar-light bg-light">
                 <p className="navbar-brand">Menu needs to be defined</p>
-            </nav>
+            </nav> */}
             <SideNav />
             <Router />
         </div>
@@ -18,13 +18,6 @@ export const AboutMe = () => {
     )
 }
 
-export const Activity = () => {
-    return <h1>This is Activity to be done</h1>
-}
-
-export const Contact = () => {
-    return <> <h1>This is Contact</h1> <Outlet /> </>
-}
 export const Email = () => {
     return <h1>This is Email</h1>
 }

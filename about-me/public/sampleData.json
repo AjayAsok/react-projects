@@ -4,5 +4,63 @@
     "mainDesignation": "Full-stack developer",
     "currentPosition": "Student",
     "location": "United Kingdom",
-    "description": "This is the description about me!!"
+    "description": "A good team player having an optimistic view also committed towards my duties and flexible enough to adapt to newly assigned roles with greater responsibilities.",
+    "skills": [
+        {
+            "name": "Java",
+            "percent": "80%"
+        },
+        {
+            "name": "react",
+            "percent": "60%"
+        },
+        {
+            "name": "Angular",
+            "percent": "80%"
+        },
+        {
+            "name": "HTML and CSS",
+            "percent": "80%"
+        },
+        {
+            "name": "Javascript",
+            "percent": "75%"
+        },
+        {
+            "name": "Bootstrap",
+            "percent": "80%"
+        }
+    ],
+    "languages": [
+        {
+            "name": "English",
+            "read": true,
+            "write": true,
+            "speak": true
+        },
+        {
+            "name": "Malayalam",
+            "read": true,
+            "write": true,
+            "speak": true
+        },
+        {
+            "name": "Hindi",
+            "read": true,
+            "write": true,
+            "speak": true
+        },
+        {
+            "name": "Sanskrit",
+            "read": true,
+            "write": true,
+            "speak": true
+        },
+        {
+            "name": "Tamil",
+            "read": false,
+            "write": false,
+            "speak": true
+        }
+    ]
 }

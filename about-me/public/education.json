@@ -1,0 +1,25 @@
+[
+    {
+        "course": "Master of Business Administration with Professional Placement",
+        "yearofstudy": "2020-2022",
+        "university": "University of Central Lancashire, Preston, United Kindom"
+    },
+{
+        "course": "Bachelor’s in Computer Science and Engineering",
+        "yearofstudy": "2011-2015",
+        "university": "Mangalam College of Engineering Ettumanoor, Kottayam (Mahatma Gandhi University)",
+        "percentage": "69%"
+    },
+    {
+        "course": "Higher Secondary",
+        "yearofstudy": "2009-2011",
+        "university": "ST. Augustine's Higher Secondary School, Kalloorkkad ",
+        "percentage": "87%"
+    },
+    {
+        "course": "Secondary",
+        "yearofstudy": "2009",
+        "university": "Vivekananda Vidyalayam, Muvattupuzha",
+        "percentage": "91%"
+    }
+]

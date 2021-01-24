@@ -1,0 +1,31 @@
+{
+    "professional": [
+        "Full-stack Web application development (front end and back end)",
+        "Following Agile project development methodology",
+        "Planning and estimation of tasks",
+        "Documentation",
+        "Customer interaction"
+    ],
+    "technical": [
+        "Excellent knowledge of Java programming and Angular",
+        "Knowledge with React, ExpressJS, Typescript, Mongobd, graphQL",
+        "Good programming knowledge of C, C++",
+        "Tools used – Eclipse, Microsoft Office, Visual Studio Code",
+        "Operating Systems – Windows XP, Vista, 7, 8, 10",
+        "DBMS – SQL server 2010, MYSQL, Oracle",
+        "Knowledge of MS Office tools like VBA",
+        "Work experience in JBOSS server and Tomcat",
+        "Working experience with Jenkins",
+        "Used SVN, GIT repositories for version control"
+    ],
+    "resposibilities": [
+        "Following Agile Scrum software development methodology",
+        "Interacting closely with customers",
+        "Planning and providing estimates for different task divisions",
+        "Developing and delivering applications",
+        "Writing unit test cases to ensure code quality",
+        "Code review",
+        "Bug fixes as per reports from the Quality Assurance Team",
+        "Staying up-to-date with the latest technologies"
+    ]
+}

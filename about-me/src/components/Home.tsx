@@ -1,14 +1,13 @@
 import { useEffect, useState } from "react"
 import Card from "./Card";
-import { data } from "../data/data";
+import { homeData } from "../data/data";
 
 export const Home = () => {
-    const [data, setData] = useState({} as data);
+    const [data, setData] = useState({} as homeData);
     const headerList = ["Personal Details", "Who Am I?"]
     const getData = () => {
         fetch(`sampleData.json`)
             .then((response) => {
-                console.log(response)
                 return response.json();
             })
             .then((myData) => {
@@ -47,7 +46,8 @@ export const Home = () => {
                 <Card key="Who am I?" header="Who am I?" data={data} />
             </div>
             <div className='row pl-2'>
-            <Card key="skills" header="skills" data={data} />
+                <Card key="skills" header="skills" data={data} />
+                <Card key="languages" header="languages" data={data} />
             </div>
         </>
     )
