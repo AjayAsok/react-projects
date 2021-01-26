@@ -21,6 +21,29 @@ export const Home = () => {
     }, [])
     return (
         <>
+            <div className="row pl-2">
+                <div className="card-body bg-light">
+                    <div className="col-11 card m-5 p-2 text-center">
+                        <div className="card-body bg-light">
+                            <a href="https://www.linkedin.com/in/ajay-asok">
+                                <img src="linkedin.svg" width="50" height="50" />
+                            </a>
+                            <a href="https://github.com/AjayAsok/">
+                                <img src="github.svg" width="50" height="50" />
+                            </a>
+                            <a href="https://www.facebook.com/ajay.asok.92">
+                                <img src="facebook.svg" width="50" height="50" />
+                            </a>
+                            <a href="https://www.instagram.com/a__ja__y/">
+                                <img src="instagram.svg" width="50" height="50" />
+                            </a>
+                            <a href="https://join.skype.com/invite/kINSZY1vNEkg">
+                                <img src="skype.svg" width="50" height="50" />
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div className='row pl-2'>
                 {/* <div className="col-5 card m-5 p-2" >
                     <div className="card-header bg-primary"><h4>Personal Details</h4></div>

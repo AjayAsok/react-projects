@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router"
 import { Home } from "./Home"
-import { Email, Phone } from "./MainDisplay"
+import { Contact } from "./Contact";
 import { Employment } from "./Employment";
 import { Education } from "./Education";
 import { Skills } from "./Skills";
@@ -14,9 +14,8 @@ export const Router = () => {
                 <Route path="/employment" element={<Employment />}></Route>
                 <Route path="/skills" element={<Skills />}></Route>
                 <Route path="/education" element={<Education />}>
-                    <Route path="/email" element={<Email />}></Route>
-                    <Route path="/phone" element={<Phone />}></Route>
                 </Route>
+                <Route path="/contact" element={<Contact />}></Route>
             </Routes>
         </div>
     )
