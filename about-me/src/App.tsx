@@ -1,5 +1,5 @@
 import './App.css';
-import { AboutMe } from "./components/home.component";
+import { AboutMe } from "./components/MainDisplay";
 
 function App() {
   return (

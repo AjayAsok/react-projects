@@ -1,0 +1,30 @@
+[
+    {
+        "designation": "Software Engineer",
+        "organisation": "Allianz",
+        "yearRange": "2015 - 2018",
+        "empType": "Full-Time",
+        "location": "Trivandrum, Kerala, India",
+        "technologies": [
+            "Java",
+            "Angular"
+        ],
+        "descriptions": [
+            "Project Management"
+        ]
+    },
+    {
+        "designation": "Project Engineer",
+        "organisation": "Wipro Technologies",
+        "yearRange": "2018 - 2020",
+        "empType": "Full-Time",
+        "location": "Kochi, Kerala, India",
+        "technologies": [
+            "Java",
+            "Angular"
+        ],
+        "descriptions": [
+            "Project Management"
+        ]
+    }
+]
