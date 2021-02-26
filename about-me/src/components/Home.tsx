@@ -4,14 +4,12 @@ import { homeData } from "../data/data";
 
 export const Home = () => {
     const [data, setData] = useState({} as homeData);
-    const headerList = ["Personal Details", "Who Am I?"]
     const getData = () => {
         fetch(`sampleData.json`)
             .then((response) => {
                 return response.json();
             })
             .then((myData) => {
-                console.log(myData)
                 setData(myData)
             })
 
@@ -21,30 +19,26 @@ export const Home = () => {
     }, [])
     return (
         <>
-            <div className="row pl-2">
-                <div className="card-body bg-light">
-                    <div className="col-11 card m-5 p-2 text-center">
-                        <div className="card-body bg-light">
-                            <a href="https://www.linkedin.com/in/ajay-asok">
-                                <img src="linkedin.svg" width="50" height="50" />
-                            </a>
-                            <a href="https://github.com/AjayAsok/">
-                                <img src="github.svg" width="50" height="50" />
-                            </a>
-                            <a href="https://www.facebook.com/ajay.asok.92">
-                                <img src="facebook.svg" width="50" height="50" />
-                            </a>
-                            <a href="https://www.instagram.com/a__ja__y/">
-                                <img src="instagram.svg" width="50" height="50" />
-                            </a>
-                            <a href="https://join.skype.com/invite/kINSZY1vNEkg">
-                                <img src="skype.svg" width="50" height="50" />
-                            </a>
-                        </div>
-                    </div>
+            {/* <div className="row pl-2">
+                <div className="col-10 card m-5 p-2 text-center">
+                    <a href="https://www.linkedin.com/in/ajay-asok">
+                        <img src="linkedin.svg" width="30" height="30" alt="LinkedIn" />
+                    </a>
+                    <a href="https://github.com/AjayAsok/">
+                        <img src="github.svg" width="30" height="30" alt="Github" />
+                    </a>
+                    <a href="https://www.facebook.com/ajay.asok.92">
+                        <img src="facebook.svg" width="30" height="30" alt="Facebook" />
+                    </a>
+                    <a href="https://www.instagram.com/a__ja__y/">
+                        <img src="instagram.svg" width="30" height="30" alt="Instagram" />
+                    </a>
+                    <a href="https://join.skype.com/invite/kINSZY1vNEkg">
+                        <img src="skype.svg" width="30" height="30" alt="Skype" />
+                    </a>
                 </div>
-            </div>
-            <div className='row pl-2'>
+            </div> */}
+            <div className='pl-2'>
                 {/* <div className="col-5 card m-5 p-2" >
                     <div className="card-header bg-primary"><h4>Personal Details</h4></div>
                     <div className="card-body bg-light">
@@ -66,9 +60,10 @@ export const Home = () => {
                     return <Card key={header} header={header} data={data} />
                 })} */}
                 <Card key="Personal Details" header="Personal Details" data={data} />
-                <Card key="Who am I?" header="Who am I?" data={data} />
+
             </div>
             <div className='row pl-2'>
+                <Card key="Who am I?" header="Who am I?" data={data} />
                 <Card key="skills" header="skills" data={data} />
                 <Card key="languages" header="languages" data={data} />
             </div>

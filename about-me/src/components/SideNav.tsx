@@ -1,47 +1,66 @@
 import { Link } from "react-router-dom"
-import image from "../assets/image.jpg";
 
-import styled from 'styled-components'
+import MenuIcon from '@material-ui/icons/Menu';
+import CloseIcon from '@material-ui/icons/Close';
+import { useState } from "react";
+import "../App.css";
 
-const SidebarParent = styled.div`
-  background: #007bff;
-  width: 30vh;
-  height: 100vh;
-  padding: 0;
-  margin: 0;
-`;
-const SidebarItem = styled.div`
-  padding: 16px 24px;
-  transition: all 0.25s ease-in-out;
-  //Change the background color if 'active' prop is received
-  background: "#b15b00" : ""};
-  margin: 4px 12px;
-  border-radius: 4px;
-  
+const sideBarData = [
+    {
+        title: "Home",
+        path: '/',
+        cName: 'nav-text'
+    },
+    {
+        title: "Employment",
+        path: '/employment',
+        cName: 'nav-text'
+    },
+    {
+        title: "Skills",
+        path: '/skills',
+        cName: 'nav-text'
+    },
+    {
+        title: "Education",
+        path: '/education',
+        cName: 'nav-text'
+    },
 
-  p {
-    color: white;
-    font-weight: bold;
-    text-decoration: none;
-  }
+];
 
-  a {
-      color: black;
-  }
-  
-  &:hover {
-    cursor:pointer;
-  }
-  
-  &:hover:not(:first-child) {
-    background: #2fa98c;
-    color: red;
-  }
-`;
 export const SideNav = () => {
+    const [sidebar, setSidebar] = useState(false);
+    const showSideBar = () => {
+        setSidebar(!sidebar)
+    }
+
     return (
         <>
-            <div className='col-md-2 d-none d-md-block bg-light sidebar'>
+            <div className="navbar">
+                <Link to="#" className="menu-bars">
+                    <MenuIcon onClick={showSideBar} />
+                </Link>
+            </div>
+            <nav className={sidebar ? 'nav-menu active' : 'nav-menu'}>
+                <ul className="nav-menu-items" onClick={showSideBar}>
+                    <li key='toggle' className="navbar-toggle">
+                        <Link to="#" className="menu-bars">
+                            <CloseIcon />
+                        </Link>
+                    </li>
+                    {sideBarData.map((item, index) => {
+                        return (
+                            <li key={index} className={item.cName}>
+                                <Link to={item.path}>
+                                    <span>{item.title}</span>
+                                </Link>
+                            </li>
+                        )
+                    })}
+                </ul>
+            </nav>
+            {/* <div className='col-md-2 d-none d-md-block bg-light sidebar'>
                 <div className="sidebar-sticky">
                     <SidebarParent className="nav flex-column">
                         <SidebarItem className="nav-item">
@@ -62,7 +81,7 @@ export const SideNav = () => {
                         </SidebarItem>
                     </SidebarParent>
                 </div>
-            </div>
+            </div> */}
         </>
     )
 }
