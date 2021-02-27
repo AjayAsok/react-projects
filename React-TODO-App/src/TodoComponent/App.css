@@ -1,0 +1,31 @@
+body, html {
+  height: 100%;
+}
+
+.bg {
+  background-image: url("../resources/background.jpg");
+  height: 100%;
+  background-position: center;
+  background-repeat: repeat-y;
+  background-size: cover;
+}
+
+.addItem {
+  color: white;
+}
+
+.addItem:hover {
+  color: white;
+}
+
+.addItem:active {
+  transform: scale(0.98);
+}
+
+.todo-color {
+  background: white;
+}
+
+.trigger:active {
+  transform: scale(1);
+}
