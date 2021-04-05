@@ -20,7 +20,7 @@ export default function DateAndTimePickers(props) {
     const [time, setTime] = useState("");
     useEffect(() => {
         props.onTimeChange(time)
-    }, [time])
+    })
 
     return (
         <form className={classes.container} noValidate>
