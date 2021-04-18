@@ -18,7 +18,6 @@ export default function App() {
 
   const changeTime = (timeValue) => {
     setTime(timeValue)
-    console.log(timeValue);
   }
 
   useEffect(() => {
@@ -51,6 +50,7 @@ export default function App() {
       updateTodosList(previousTodos => {
         return [...previousTodos, newItem];
       });
+      setTime("");
       setTodoValue("");
     } else {
       changeAlertState(true);
