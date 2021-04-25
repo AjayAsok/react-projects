@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Avatar from '@material-ui/core/Avatar';
 import Button from '@material-ui/core/Button';
 import CssBaseline from '@material-ui/core/CssBaseline';
@@ -12,13 +12,7 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import {
-  BrowserRouter as Router,
-  Switch,
-  Route,
-  Link as RLink
-} from "react-router-dom";
-import { SignUp } from './SignUp';
+import { NavLink } from "react-router-dom";
 
 const Copyright = () => {
   return (
@@ -56,6 +50,17 @@ const useStyles = makeStyles((theme) => ({
 const SignIn = () => {
   const classes = useStyles();
 
+  const [userName, setUserName] = useState("")
+  const [password, setPassword] = useState("")
+
+  const clickHandler = () => {
+    if (userName === "ajay" && password === "pass") {
+      alert("Welcome!!");
+    } else {
+      alert("Oh No!! you are not authorized")
+    }
+  }
+
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -64,7 +69,7 @@ const SignIn = () => {
           <LockOutlinedIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Sign in
+          Sign In
         </Typography>
         <form className={classes.form} noValidate>
           <TextField
@@ -77,6 +82,9 @@ const SignIn = () => {
             name="email"
             autoComplete="email"
             autoFocus
+            onChange={(e) => {
+              setUserName(e.target.value)
+            }}
           />
           <TextField
             variant="outlined"
@@ -88,17 +96,21 @@ const SignIn = () => {
             type="password"
             id="password"
             autoComplete="current-password"
+            onChange={(e) => {
+              setPassword(e.target.value)
+            }}
           />
           <FormControlLabel
             control={<Checkbox value="remember" color="primary" />}
             label="Remember me"
           />
           <Button
-            type="submit"
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit}
+            className={classes.submit} onClick={
+              clickHandler
+            }
           >
             Sign In
           </Button>
@@ -110,19 +122,9 @@ const SignIn = () => {
               </Link>
           </Grid>
           <Grid item>
-            {/* <Link href="#" variant="body2">
-              
-            </Link> */}
-            <Router>
-              <RLink to="/signup">
-                {"Don't have an account? Sign Up"}
-              </RLink>
-              <Switch>
-                <Route path="/signup">
-                  <SignUp />
-                </Route>
-              </Switch>
-            </Router>
+            <NavLink to="/signup">
+              {"Don't have an account? Sign Up"}
+            </NavLink>
           </Grid>
         </Grid>
       </div>

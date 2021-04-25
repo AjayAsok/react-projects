@@ -1,10 +1,24 @@
 import './App.css';
 import SignIn from './SignIn';
-// import SignUp from './SignUp';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route
+} from "react-router-dom";
+import { SignUp } from './SignUp';
 
 const App = () => {
   return (
-    <SignIn />
+    <Router>
+      <Switch>
+        <Route path="/signup">
+          <SignUp />
+        </Route>
+        <Route path="/">
+          <SignIn />
+        </Route>
+      </Switch>
+    </Router>
   );
 }
 
