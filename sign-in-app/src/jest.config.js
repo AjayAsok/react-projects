@@ -18,9 +18,12 @@ module.exports = {
     ],
 
     // Test spec file resolution pattern
-    // Matches parent folder `__tests__` and filename
+    // Matches parent folder `testScripts` and filename
     // should contain `test` or `spec`.
-    testRegex: "(/__tests__/.*|(\\.|/)(test|spec))\\.tsx?$",
+    testRegex: "(/testScripts/.*|(\\.|/)(test|spec))\\.tsx?$",
+    moduleNameMapper: {
+        '\\.(css|less)$': '/testScripts/_cssMocker.js',
+    },
 
     // Module file extensions for importing
     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"]
