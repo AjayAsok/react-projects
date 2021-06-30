@@ -1,0 +1,19 @@
+{
+    "data": {
+        "title": "Javascript Arrays",
+        "topics": [
+            {
+                "head": "1st topic",
+                "body": "Description1",
+                "exampleCode": "let fn(()=> {console.log('test')})",
+                "result": "test"
+            },
+            {
+                "head": "2nd topic",
+                "body": "Description2",
+                "exampleCode": "let fn(()=> {console.log('test2')})",
+                "result": "test2"
+            }
+        ]
+    }
+}

@@ -12,14 +12,21 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
-import { NavLink } from "react-router-dom";
+import { NavLink, Redirect, Route, useHistory } from "react-router-dom";
+import { PwdReset } from './PwdReset';
+import { createBrowserHistory as history } from "history";
+
+
+export type SignInProps = {
+  isAuthorised: boolean;
+}
 
 const Copyright = () => {
   return (
     <Typography variant="body2" color="textSecondary" align="center">
       {'Copyright © '}
-      <Link color="inherit" href="https://material-ui.com/">
-        Your Website
+      <Link color="inherit" href="https://ajaydevportfolio.tech/">
+        My Website
       </Link>{' '}
       {new Date().getFullYear()}
       {'.'}
@@ -52,10 +59,11 @@ const SignIn = () => {
 
   const [userName, setUserName] = useState("")
   const [password, setPassword] = useState("")
+  const history = useHistory();
 
   const clickHandler = () => {
     if (userName === "ajay" && password === "pass") {
-      alert("Welcome!!");
+      history.push('/dashboard')
     } else {
       alert("Oh No!! you are not authorized")
     }
@@ -108,18 +116,16 @@ const SignIn = () => {
             fullWidth
             variant="contained"
             color="primary"
-            className={classes.submit} onClick={
-              clickHandler
-            }
+            className={classes.submit} onClick={clickHandler}
           >
             Sign In
           </Button>
         </form>
         <Grid container>
           <Grid item xs>
-            <Link href="#" variant="body2">
-              Forgot password?
-              </Link>
+            <NavLink to="/forgot">
+              Forgot Password
+            </NavLink>
           </Grid>
           <Grid item>
             <NavLink to="/signup">
