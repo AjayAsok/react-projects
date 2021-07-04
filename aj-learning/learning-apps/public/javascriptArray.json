@@ -3,8 +3,8 @@
         "title": "Javascript Arrays",
         "topics": [
             {
-                "head": "1st topic",
-                "body": "Description1",
+                "head": "Map()",
+                "body": "This is an array method which is used for iterating through the sample array. I know this content which I am writing is stupid but now it's a sample that's why I am doing like this. Hope you all can understand what I meant. I meant nothing. But, if you are able to understand something, I meant something!!",
                 "exampleCode": "let fn(()=> {console.log('test')})",
                 "result": "test"
             },

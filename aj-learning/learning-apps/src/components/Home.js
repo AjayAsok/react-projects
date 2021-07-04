@@ -9,12 +9,24 @@ const useStyles = makeStyles({
     root: {
         background: "#3333",
         // maxWidth: 300
+        padding: 1,
+        margin: 10
     },
     head: {
-        background: "White"
+        background: "White",
+        textAlign: "left"
     },
-    content: {
-        background: "grey"
+    desc: {
+        background: "white",
+        textAlign: "justify",
+        fontFamily: "arial"
+    },
+    code: {
+        fontFamily: "monospace",
+        background: "Black",
+        color: "blue",
+        textAlign: "left",
+        padding: "2rem"
     }
 });
 
@@ -35,29 +47,28 @@ export const Home = () => {
     return (
         <>
             <div>
-                {data ? data.title : ""}
-                {/*data ? data.topics.map((topic) => {
-                    <Card className={classes.root}>
-                        LL
+                {data ? <h2>{data.title}</h2> : "loading!!"}
+                {data.topics ? data.topics.map((topic, index) => {
+                    return (<Card key={index} className={classes.root}>
                         <CardActionArea>
                             <CardContent>
                                 <Typography className={classes.head} gutterBottom variant="h5" component="h2">
-                                    Heading
+                                    {topic.head}
                                 </Typography>
-                                <Typography className={classes.content} variant="body2" color="textSecondary" component="p">
-                                    Total description
+                                <Typography className={classes.desc} variant="body2" color="textSecondary" component="p">
+                                    {topic.body}
                                 </Typography>
-                                <Typography className={classes.content} variant="body2" color="textSecondary" component="p">
-                                    Example Code
+                                <Typography className={classes.code} variant="body2" color="textSecondary" component="p">
+                                    {topic.exampleCode}
                                 </Typography>
-                                <Typography className={classes.content} variant="body2" color="textSecondary" component="p">
-                                    Example Answer
+                                <Typography className={classes.result} variant="body2" color="textSecondary" component="p">
+                                    {topic.result}
                                 </Typography>
                             </CardContent>
                         </CardActionArea>
-                    </Card>
-                }) : ""} */}
-                <Card className={classes.root}>
+                    </Card>)
+                }) : ""}
+                {/* <Card className={classes.root}>
                     <CardActionArea>
                         <CardContent>
                             <Typography className={classes.head} gutterBottom variant="h5" component="h2">
@@ -74,7 +85,7 @@ export const Home = () => {
                             </Typography>
                         </CardContent>
                     </CardActionArea>
-                </Card>
+                </Card> */}
             </div>
         </>
     )
