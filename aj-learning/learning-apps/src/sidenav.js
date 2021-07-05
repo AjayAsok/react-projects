@@ -17,7 +17,11 @@ import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
 import MailIcon from '@material-ui/icons/Mail';
+// import Collapse from '@material-ui/core/Collapse';
+import ExpandLess from '@material-ui/icons/ExpandLess';
+import ExpandMore from '@material-ui/icons/ExpandMore';
 import { Home } from './components/Home';
+import { ReactComp } from "./components/React";
 
 const drawerWidth = 240;
 
@@ -76,6 +80,9 @@ const useStyles = makeStyles((theme) => ({
         }),
         marginLeft: 0,
     },
+    nested: {
+        paddingLeft: theme.spacing(4),
+    },
 }));
 
 export function SideNav() {
@@ -83,6 +90,17 @@ export function SideNav() {
     const theme = useTheme();
     const [open, setOpen] = React.useState(false);
     const [selected, setSelected] = React.useState("");
+    const modules = [
+        { name: "Javascript", children: ["array", "class"] },
+        { name: "React" },
+        { name: "Node" }
+    ];
+    const [collOpen, setCollOpen] = React.useState(true);
+
+    const handleClick = (module) => {
+        setSelected(module)
+        setCollOpen(!open);
+    };
 
     const handleDrawerOpen = () => {
         setOpen(true);
@@ -94,6 +112,20 @@ export function SideNav() {
 
     const clickHandler = () => {
         alert()
+    }
+    const renderSwitch = (selected) => {
+        switch (selected) {
+            case "Javascript":
+                return <Home />
+
+            case "React":
+                return <ReactComp />
+
+
+            default:
+                return "Loading!!!"
+                break;
+        }
     }
 
     return (
@@ -136,13 +168,36 @@ export function SideNav() {
                 </div>
                 <Divider />
                 <List>
-                    {['Javascript', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-                        <ListItem button key={text} onClick={() => {
-                            setSelected(text)
-                        }}>
-                            <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-                            <ListItemText primary={text} />
-                        </ListItem>
+                    {modules.map((module, index) => (
+                        <div>
+                            <ListItem button key={module.text} onClick={() => {
+                                { handleClick(module) }
+                            }}>
+                                <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
+                                <ListItemText primary={module.name} />
+                                {collOpen ? <ExpandLess /> : <ExpandMore />}
+
+                            </ListItem>
+                            {module.children ?
+                                <List component="div" disablePadding>
+                                    <ListItem button className={classes.nested}>
+                                        <ListItemIcon>
+                                            {/* <StarBorder /> */}
+                                        </ListItemIcon>
+                                        <ListItemText primary="Starred" />
+                                    </ListItem>
+                                </List> : ""}
+                            {/* <Collapse in={collOpen} timeout="auto" unmountOnExit> 
+                                <List component="div" disablePadding>
+                                    <ListItem button className={classes.nested}>
+                                        <ListItemIcon>
+                                            <StarBorder />
+                                        </ListItemIcon>
+                                        <ListItemText primary="Starred" />
+                                    </ListItem>
+                                </List>
+                            </Collapse> */}
+                        </div>
                     ))}
                 </List>
                 <Divider />
@@ -161,7 +216,9 @@ export function SideNav() {
                 })}
             >
                 <div className={classes.drawerHeader} />
-                {selected === "Javascript" ? <Home /> : ""}
+                { }
+                {renderSwitch(selected.name)}
+                {/* {selected.name === "Javascript" ? <Home /> : <Node />} */}
                 {/* <Home /> */}
             </main>
         </div>
