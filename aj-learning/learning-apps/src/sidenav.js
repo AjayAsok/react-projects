@@ -170,7 +170,7 @@ export function SideNav() {
                 <List>
                     {modules.map((module, index) => (
                         <div>
-                            <ListItem button key={module.text} onClick={() => {
+                            <ListItem button key={index} onClick={() => {
                                 { handleClick(module) }
                             }}>
                                 <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
@@ -203,7 +203,7 @@ export function SideNav() {
                 <Divider />
                 <List>
                     {['All mail', 'Trash', 'Spam'].map((text, index) => (
-                        <ListItem button key={text}>
+                        <ListItem button key={index}>
                             <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
                             <ListItemText primary={text} />
                         </ListItem>

@@ -4,6 +4,7 @@ import CardActionArea from "@material-ui/core/CardActionArea";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import { CardComp } from './Card';
 
 const useStyles = makeStyles({
     root: {
@@ -46,7 +47,12 @@ export const Home = () => {
     console.log(data)
     return (
         <>
-            <div>
+            {data.topics ? data.topics.map((topic, index) => {
+                return (
+                    <CardComp key={index} data={topic} />)
+            }
+            ) : "loading"}
+            {/* <div>
                 {data ? <h2>{data.title}</h2> : "loading!!"}
                 {data.topics ? data.topics.map((topic, index) => {
                     return (<Card key={index} className={classes.root}>
@@ -68,7 +74,7 @@ export const Home = () => {
                         </CardActionArea>
                     </Card>)
                 }) : ""}
-                {/* <Card className={classes.root}>
+                <Card className={classes.root}>
                     <CardActionArea>
                         <CardContent>
                             <Typography className={classes.head} gutterBottom variant="h5" component="h2">
@@ -85,8 +91,8 @@ export const Home = () => {
                             </Typography>
                         </CardContent>
                     </CardActionArea>
-                </Card> */}
-            </div>
+                </Card>
+            </div> */}
         </>
     )
 }
