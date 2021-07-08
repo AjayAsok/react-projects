@@ -5,7 +5,7 @@ import Card from '@material-ui/core/Card';
 import CardHeader from '@material-ui/core/CardHeader';
 import CardContent from '@material-ui/core/CardContent';
 import CardMedia from '@material-ui/core/CardMedia';
-import Avatar from '@material-ui/core/Avatar';
+// import Avatar from '@material-ui/core/Avatar';
 import Typography from '@material-ui/core/Typography';
 import IconButton from '@material-ui/core/IconButton';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
@@ -15,10 +15,11 @@ const useStyles = makeStyles((theme) => ({
     card: {
         //maxWidth: 345,
         margin: theme.spacing(2),
+        background: "#e7e9ebc7"
     },
     media: {
         height: 190,
-        background: "#d5dbe3",
+        background: "#badec8",
     },
 }));
 
@@ -34,12 +35,7 @@ function Media(props) {
                 avatar={
                     loading ? (
                         <Skeleton animation="wave" variant="circle" width={40} height={40} />
-                    ) : (
-                        <Avatar
-                            alt="Ted talk"
-                            src=""
-                        />
-                    )
+                    ) : ""
                 }
                 action={
                     loading ? null : (

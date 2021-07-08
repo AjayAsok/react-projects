@@ -26,16 +26,21 @@ import { ReactComp } from "./components/React";
 const drawerWidth = 240;
 
 const useStyles = makeStyles((theme) => ({
+    bg: {
+        background: "#5c945c"
+    },
     root: {
         display: 'flex',
     },
     appBar: {
+        background: "#5c945c",
         transition: theme.transitions.create(['margin', 'width'], {
             easing: theme.transitions.easing.sharp,
             duration: theme.transitions.duration.leavingScreen,
         }),
     },
     appBarShift: {
+        background: "#5c945c",
         width: `calc(100% - ${drawerWidth}px)`,
         marginLeft: drawerWidth,
         transition: theme.transitions.create(['margin', 'width'], {
@@ -166,8 +171,8 @@ export function SideNav() {
                         {theme.direction === 'ltr' ? <ChevronLeftIcon /> : <ChevronRightIcon />}
                     </IconButton>
                 </div>
-                <Divider />
-                <List>
+                <Divider className={classes.bg} />
+                <List className={classes.bg}>
                     {modules.map((module, index) => (
                         <div>
                             <ListItem button key={index} onClick={() => {
