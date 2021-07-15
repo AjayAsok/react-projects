@@ -7,7 +7,8 @@ export const ReactComp = () => {
         exampleCode: "code"
     }
     return (
-        <div>
+        <div style={{ background: "red" }}>
+            <div>This is a sample</div>
             <CardComp data={data} />
         </div>
     );
