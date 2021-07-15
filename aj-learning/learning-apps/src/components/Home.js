@@ -5,9 +5,20 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import { CardComp } from './Card';
+import Paper from '@material-ui/core/Paper';
+import Grid from '@material-ui/core/Grid';
 
-const useStyles = makeStyles({
+const useStyles = makeStyles((theme) => ({
     root: {
+        flexGrow: 1,
+        background: "#efe8e8"
+    },
+    paper: {
+        padding: theme.spacing(2),
+        textAlign: 'center',
+        color: theme.palette.text.secondary,
+    },
+    root1: {
         background: "#3333",
         // maxWidth: 300
         padding: 1,
@@ -29,7 +40,7 @@ const useStyles = makeStyles({
         textAlign: "left",
         padding: "2rem"
     }
-});
+}));
 
 export const Home = () => {
     const classes = useStyles();
@@ -49,7 +60,23 @@ export const Home = () => {
         <>
             {data.topics ? data.topics.map((topic, index) => {
                 return (
-                    <CardComp key={index} data={topic} />)
+                    <>
+                        {/* 
+                         */}
+
+                        <div className={classes.root}>
+                            <Grid container spacing={3}>
+                                <Grid item xs={6} sm={6} style={{ background: "#4d5371", color: "white" }}>
+                                    {/* <Paper className={classes.paper}>xs=6 sm=3</Paper> */}
+                                    <div>This is a comp</div>
+                                </Grid>
+                                <Grid item xs={6} sm={6}>
+                                    <CardComp key={index} data={topic} />
+                                </Grid>
+                            </Grid>
+                        </div>
+
+                    </>)
             }
             ) : "loading"}
             {/* <div>
