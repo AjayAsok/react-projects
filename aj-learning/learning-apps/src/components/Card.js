@@ -48,7 +48,7 @@ function Media(props) {
                     loading ? (
                         <Skeleton animation="wave" height={10} width="80%" style={{ marginBottom: 6 }} />
                     ) : (
-                        props.data.head
+                        `Example for ` + props.data.head
                     )
                 }
                 subheader={loading ? <Skeleton animation="wave" height={10} width="40%" /> : '5 hours ago'}
@@ -72,7 +72,7 @@ function Media(props) {
                 </CardContent>
             )}
 
-            <CardContent>
+            {/* <CardContent>
                 {loading ? (
                     <React.Fragment>
                         <Skeleton animation="wave" height={10} style={{ marginBottom: 6 }} />
@@ -85,7 +85,7 @@ function Media(props) {
                         }
                     </Typography>
                 )}
-            </CardContent>
+            </CardContent> */}
         </Card>
     );
 }
