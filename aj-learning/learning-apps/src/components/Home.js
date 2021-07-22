@@ -64,17 +64,19 @@ export const Home = () => {
                         {/* 
                          */}
 
-                        <div className={classes.root}>
-                            <Grid container spacing={3}>
-                                <Grid item xs={6} sm={6} style={{ background: "#4d5371", color: "white" }}>
+                        <div className={classes.root} style={{ padding: "1em" }}>
+                            <Grid container spacing={3} style={{ background: "rgb(71 51 86)" }}>
+                                <Grid item xs={6} sm={6} style={{ background: "rgb(71 51 86)", color: "white" }}>
                                     {/* <Paper className={classes.paper}>xs=6 sm=3</Paper> */}
-                                    <div>This is a comp</div>
+                                    <h1>{topic.head}</h1>
+                                    <div style={{alignItems:'left'}}>{topic.body}</div>
                                 </Grid>
                                 <Grid item xs={6} sm={6}>
                                     <CardComp key={index} data={topic} />
                                 </Grid>
                             </Grid>
                         </div>
+                        <hr />
 
                     </>)
             }
